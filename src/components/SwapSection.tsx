@@ -5,12 +5,42 @@ import { useAccount } from "wagmi";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 
 const TOKENS = [
-  { name: "RITUAL", full: "Ritual Network", color: "#1A6B4A" },
-  { name: "USDT", full: "Tether USD", color: "#26A17B" },
-  { name: "USDC", full: "USD Coin", color: "#2775CA" },
-  { name: "ETH", full: "Ethereum", color: "#627EEA" },
-  { name: "WBTC", full: "Wrapped Bitcoin", color: "#F7931A" },
-  { name: "DAI", full: "Dai Stablecoin", color: "#F5AC37" },
+  {
+    name: "RITUAL",
+    full: "Ritual Network",
+    color: "#1A6B4A",
+    logo: "/logo.png",
+  },
+  {
+    name: "USDT",
+    full: "Tether USD",
+    color: "#26A17B",
+    logo: "https://assets.coingecko.com/coins/images/325/small/Tether.png",
+  },
+  {
+    name: "USDC",
+    full: "USD Coin",
+    color: "#2775CA",
+    logo: "https://assets.coingecko.com/coins/images/6319/small/usdc.png",
+  },
+  {
+    name: "ETH",
+    full: "Ethereum",
+    color: "#627EEA",
+    logo: "https://assets.coingecko.com/coins/images/279/small/ethereum.png",
+  },
+  {
+    name: "WBTC",
+    full: "Wrapped Bitcoin",
+    color: "#F7931A",
+    logo: "https://assets.coingecko.com/coins/images/7598/small/wrapped_bitcoin_wbtc.png",
+  },
+  {
+    name: "DAI",
+    full: "Dai Stablecoin",
+    color: "#F5AC37",
+    logo: "https://assets.coingecko.com/coins/images/9956/small/Badge_Dai.png",
+  },
 ];
 
 const RATES: Record<string, number> = {
@@ -125,9 +155,10 @@ export function SwapSection({ balances, onSwapped }: SwapProps) {
             className="flex items-center gap-2 bg-white border-2 border-ink rounded-pill
               px-3 py-2 text-[13px] font-bold hover:bg-green-bg transition-colors whitespace-nowrap"
           >
-            <span
-              className="w-4 h-4 rounded-full inline-block"
-              style={{ background: tokenInData.color }}
+            <img
+              src={tokenInData.logo}
+              className="w-4 h-4 rounded-full"
+              alt={tokenIn}
             />
             {tokenIn}
             <span className="text-gray-400 text-[11px]">▾</span>
@@ -173,9 +204,10 @@ export function SwapSection({ balances, onSwapped }: SwapProps) {
             className="flex items-center gap-2 bg-white border-2 border-ink rounded-pill
               px-3 py-2 text-[13px] font-bold hover:bg-green-bg transition-colors whitespace-nowrap"
           >
-            <span
-              className="w-4 h-4 rounded-full inline-block"
-              style={{ background: tokenOutData.color }}
+            <img
+              src={tokenOutData.logo}
+              className="w-4 h-4 rounded-full"
+              alt={tokenOut}
             />
             {tokenOut}
             <span className="text-gray-400 text-[11px]">▾</span>
@@ -245,9 +277,10 @@ export function SwapSection({ balances, onSwapped }: SwapProps) {
                 }}
                 className="flex items-center gap-3 w-full p-2.5 rounded-xl hover:bg-cream transition-colors"
               >
-                <div
+                <img
+                  src={t.logo}
                   className="w-8 h-8 rounded-full flex-shrink-0"
-                  style={{ background: t.color }}
+                  alt={t.name}
                 />
                 <div className="text-left">
                   <div className="font-bold text-[14px]">{t.name}</div>
