@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: white;
+  color: #0D0D0D;
+}
+
+/* Override RainbowKit connect button — we use our own */
+[data-rk] button[data-testid="rk-connect-button"] {
+  display: none !important;
+}
