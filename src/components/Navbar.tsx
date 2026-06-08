@@ -12,7 +12,11 @@ export function Navbar({ activeTab, onTabChange }: NavbarProps) {
     <nav className="flex items-center justify-between px-7 py-3.5 border-2 border-ink rounded-pill mx-4 mt-4 bg-white">
       {/* Logo */}
       <div className="flex items-center gap-2 font-bold text-[17px] tracking-tight">
-        <img src="logo.png" alt="logo.png" className="w-7 h-7 rounded-full" />
+        <img
+          src="/logo.png"
+          alt="Ritual logo"
+          className="w-7 h-7 rounded-full"
+        />{" "}
         Ritual
       </div>
 
